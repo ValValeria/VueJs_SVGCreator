@@ -1,2 +1,3 @@
 node_modules
-/build
+/build/client/js
+/build/server/js

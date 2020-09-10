@@ -2,28 +2,6 @@ var nodeExternals = require('webpack-node-externals');
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-
-const scss = {
-     entry:{
-         style:path.resolve('./client/scss/style.scss')
-     },
-     output:{
-         filename:"[name].css",
-         path:path.resolve("./build/client/css")
-     },
-     mode:"development",
-     module:{
-         rules:[
-              {
-                  test:/\.scss/,
-                  use:['style-loader','css-loader', 'sass-loader']
-              }
-         ]
-         
-     }
-}
-
-
 const js = {
     mode: 'development',
     entry:{
@@ -45,10 +23,6 @@ const js = {
                     },
                     esModule: true,
                 }
-            },
-            {
-                test: /\.js/,
-                loaders: ['babel-loader']
             }
         ]
     },
@@ -56,9 +30,9 @@ const js = {
         new VueLoaderPlugin(),
     ],
     resolve:{
-        extensions: ['.vue', '.json','.js'],
+        extensions: ['.vue', '.json','.js','.ts'],
         alias: {
-            'vue': 'vue/dist/vue.esm.js'
+            vue$: 'vue/dist/vue.esm.js'
         },
     },
 }
@@ -92,4 +66,4 @@ const server = {
 /**
  * When bundling with Webpack for the backend - you usually don't want to bundle its node_modules dependencies. This library creates an externals function that ignores node_modules when bundling in Webpack.
  */
-module.exports = [scss,server,js];
+module.exports = [server,js];

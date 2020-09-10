@@ -1,11 +1,17 @@
 <template>
-     <div>How are you</div>
+   <div>
+     <router-view></router-view>
+    </div> 
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Header from './Components/Header.vue';
 
 export default Vue.extend({
-    name:"Mine"
+    name:"Main",
+    components:{
+      Header
+    }
 })
 </script>
