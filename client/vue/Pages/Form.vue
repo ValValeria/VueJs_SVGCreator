@@ -81,8 +81,8 @@
                              </div>
                              <div class="card-body">
                                   <div class="actions d-flex flex-wrap align-items-center justify-content-center">
-                                      <ul class="list-group list-group-flush" v-if="link.length"> 
-                                          <li class="list-group-item"><a v-bind:href="link">Your link is here</a></li>
+                                      <ul class="list " v-if="link.length" style="list-style:none"> 
+                                          <li class="list-item mb-1"><a v-bind:href="link" class=" btn-beauty" download="file.svg">Click here to download the file</a></li>
                                       </ul>   
                                   </div>
                              </div>
@@ -168,15 +168,21 @@ export default Vue.extend({
         mouseup(){
             this.isLocked = false;
         },
-        download(){
+        download(e){
             this.$nextTick(()=>{
+                 const string = `
+                 <svg  xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 1920 762' fill='none'>
+                  ${this.elems.join('')}
+                 </svg>
+                 `;
+                 const url = URL.createObjectURL(new Blob([string],{type:"image/svg+xml"}));
+                 this.link = url;
             })
         }
     },
     mounted:function name(params) {
         this.$nextTick(()=>{
             document.querySelector('#svg').ondblclick = (e)=>{
-              console.log(e.target)
               this.isLocked = true;
             }
         })
