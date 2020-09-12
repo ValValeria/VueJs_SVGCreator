@@ -6,15 +6,12 @@
                 <h6 class="banner__headline text-center">Создать svg изображение</h6>
                 <div class="d-flex flex-column justify-content-center section__create">
                      <div class="card shadow m_5">
-                         <div class="svg__area dark">
-                              <svg width="100%" height="100%" style="min-height:40vh" id="svg" v-on:mousedown="moveItem" v-on:mouseup="mouseup" >
-                                  <g v-for="(item,index) in elems" :key="item+Math.random()" v-html="item" v-bind:data-id="index">
-                                  </g>
-                              </svg>
+                         <div class="dark">
+                              <canvas id="canvas" class="svg__area"></canvas>
                          </div>
                          <div class="card-body">
                              <h5 class="card-title">Здесь ты можешь создавать svg изображения</h5>
-                             <p class="card-subtitle">Если хотите передвинуть изображение, просто кликните на него два раза. Если хотите отпустить нажмите правой кнопкой мыши</p>
+                             <p class="card-subtitle" v-if="message.length">{{message}}</p>
                          </div>
                      </div>
 
@@ -112,49 +109,66 @@ export default Vue.extend({
                 '#ffbe76','#686de0','#c7ecee'
             ],
             activeColor:'#ffbe76',
-            elems:[],
             coordinates:{
                 x:50,y:50,
             },
             isText:false,
             text:"",
             isLocked:false,
-            link:""
+            link:"",
+            message:"",
+            context:{},
+            canvas:{}
         }
     },
     methods:{
+        draw(){
+            this.context.shadowColor = "rgba(128,128,128,.2)";
+            this.context.shadowBlur = 1;
+            this.context.lineCap = 'round';
+            this.context.lineJoin = 'round';
+            this.context.lineWidth = 1;
+            this.context.strokeStyle = 'gray';
+        },
         drawLine(){
-            this.coordinates.y=50 + Number(this.coordinates.y);
-            this.elems.push(
-                 ` <path stroke="${this.activeColor}" stroke-width="5" d="M${this.coordinates.x} ${this.coordinates.y} l215 0" />
-                 `
-            )
+            this.message = "Кликните по экрану раз мышкой, чтобы указать конец линии";
+
+            this.canvas.parentElement.addEventListener('click',(e)=>{
+                this.draw();
+                this.context.moveTo(this.coordinates.x,this.coordinates.y);
+                this.context.lineTo(e.clientX,e.clientY);
+                this.context.stroke();
+                console.log(e)
+            })
+
         },
         changeColor(e){
             this.activeColor=e.target.value;
         },
         drawCircle(){
-            this.coordinates.y=50 + Number(this.coordinates.y);
-            this.elems.push(
-                `<circle cx="${this.coordinates.x}" cy="${this.coordinates.y}" r="40"  fill="${this.activeColor}" />`
-            )
+            this.draw();
+            this.context.fillStyle=this.activeColor;
+            this.context.lineWidth = 1.25;
+            this.context.beginPath();
+            this.context.arc(this.coordinates.x,this.coordinates.y,40,0, 2 * Math.PI);
+            this.context.fill();
+            this.context.stroke();
         },
         drawText(){
             this.isText = true;
 
             this.$nextTick(()=>{
-              this.coordinates.x=50 + Number(this.coordinates.x);
-
               document.querySelector('#ok').onclick = ()=>{
-                this.elems.push(
-                `  <text x="${this.coordinates.x}" y="${this.coordinates.y}" fill="${this.activeColor}">${this.text}</text>`
-                );
+                this.context.font="30px Arial";
+                this.draw();
+                this.context.fillStyle=this.activeColor;
+                this.context.fillText(this.text,this.coordinates.x,this.coordinates.y);
                 this.isText = false;
               }}
             )
         },
         back(){
-           this.elems.splice(this.elems.length-1,1)
+           this.canvas.restore();
         },
         moveItem(e){
            this.$nextTick(()=>{
@@ -170,21 +184,14 @@ export default Vue.extend({
         },
         download(e){
             this.$nextTick(()=>{
-                 const string = `
-                 <svg  xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 1920 762' fill='none'>
-                  ${this.elems.join('')}
-                 </svg>
-                 `;
-                 const url = URL.createObjectURL(new Blob([string],{type:"image/svg+xml"}));
-                 this.link = url;
+                
             })
         }
     },
     mounted:function name(params) {
         this.$nextTick(()=>{
-            document.querySelector('#svg').ondblclick = (e)=>{
-              this.isLocked = true;
-            }
+            this.context = document.querySelector('#canvas').getContext('2d');
+            this.canvas =  document.querySelector('#canvas');
         })
     }
 })

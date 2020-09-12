@@ -13,7 +13,7 @@ body{
 
 section{
     width:100vw;
-    min-height:100vh;
+    min-height:50vh;
     padding:2rem 0;
 }
 
@@ -68,6 +68,13 @@ section{
     background-color: #f7f7fd;
 }
 
+.banner{
+    min-height:100vh !important;
+}
+
+.section__imgwr{
+    margin-right:30px;
+}
 .f__gray{
     color: #333;
 }
@@ -144,7 +151,7 @@ section{
 
 .section-pd{
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom:20px;
 }
 
 .section__img{
@@ -183,6 +190,15 @@ section{
     letter-spacing: .04em;
     color: #333;
     text-align:center
+}
+
+.footer{
+    min-height:50px !important;
+    padding: 1rem;
+}
+
+.footer p{
+    margin-bottom: 0px !important;
 }
 
 .blue{

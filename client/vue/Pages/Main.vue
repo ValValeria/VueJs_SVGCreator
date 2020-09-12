@@ -1,6 +1,6 @@
 <template>
    <div>
-   <section class="blue center">
+   <section class="blue center banner">
      <div class="section__area">
         <div class="section__sm__wr m-auto text-center">
               <div class="banner__content text-white">
@@ -32,13 +32,41 @@
          </div>
       </div>
    </section>
+
+     <section>
+      <div class="section__area section-pd">
+         <div class="section__sm__wr ">
+                <div class="headline">
+                          Делитись изображениями
+                </div>
+                <div class="section__item flex-reverse">
+                    <div class="section__item-md section__imgwr">
+                       <img alt="...."  class="section__img" src="https://static.wixstatic.com/media/028786_a9d864e863f145289a7b936bd2ff9f2a~mv2.jpg/v1/fill/w_339,h_303,al_c,q_80,usm_0.66_1.00_0.01/Artboard%201%20copy%205.webp">            
+                    </div>
+                    <div class="section__item-md text-center">
+                        <div class="section__title-sm">
+                           Легко отправлять изображения
+                        </div>
+                        <div class="section__subtitle-sm">
+                           Благодаря легкости приложения, вам будет легко деляться созданными изображениями 
+                        </div>
+                    </div>
+                </div>
+         </div>
+      </div>
+   </section>
+    <Footer/>
    </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Footer from '../Components/Footer.vue';
 
 export default Vue.extend({
-    name:"Main"
+    name:"Main",
+    components:{
+       Footer
+    }
 })
 </script>
