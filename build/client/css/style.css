@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-
 *{
     margin:0;
     padding:0;
@@ -9,11 +8,134 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 section{
     width:100vw;
     min-height:100vh;
+    padding:2rem 0;
+}
+
+.section__sm__wr{
+    max-width:800px;
+    width:90%;
+}
+
+.btn-green{
+    padding: 16px 28px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    background-color: #31b58e;
+    color: #fff;
+    min-width: 160px;
+    font-weight: 600;
+    border: none !important;
+    text-align: center;
+    border-radius: 4px;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+}
+
+.section__lr__wr{
+    max-width:1000px;
+    width:90%;
+}
+
+.m_5{
+    margin:5px !important;
+}
+
+.minw-50{
+    min-width:90px !important;
+}
+
+.tools__item{
+    padding:10px 17px;
+    margin:2px;
+    border-radius:5px;
+}
+
+.section__create > div{
+    flex: 1 1 50%;
+}
+
+.bc__lgray{
+    background-color: #f7f7fd;
+}
+
+.f__gray{
+    color: #333;
+}
+.svg__area{
+    width:100%;
+    min-height:40vh;
+}
+.dark{
+    background-color: #333;
+}
+
+.minw-100{
+    min-width:182px !important;
+}
+
+.shadow{
+    box-shadow: 12px 9px 50px 0 rgba(0,0,0,.05);
+}
+.m-16{
+    margin:16px;
+}
+
+.mb-16{
+   margin-bottom:16px !important;
+}
+.color{
+    min-width: 300px;
+    height:38px;
+}
+.btn-beauty{
+    min-width: 290px;
+    background-color: #f65858;
+    background-image: none;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 16px 28px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    text-align: center;
+    border-radius: 4px;
+    display:inline-block;
+    font-weight: 600;
+}
+
+.btn-beauty:hover{
+    text-decoration: none;
+    color:inherit;
+    background-color: #ec4949;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.banner__headline{
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section__area{
+    width:90%;
+    margin:0 auto;
+    max-width:1100px;
+    height:100%;
 }
 
 .blue{

@@ -1,10 +1,12 @@
 <template>
-   <section class="blue">
-     <div class="banner__area">
-       <div class="banner__content">
-            <h6>Создание svg изображений</h6>
-            <p>fast and easy</p>
-       </div>
+   <section class="blue center">
+     <div class="section__area">
+        <div class="section__sm__wr m-auto text-center">
+              <div class="banner__content text-white">
+                <h6 class="banner__headline">Создание svg изображений</h6>
+                <router-link to="/form"  class="btn-beauty">Попробовать бесплатно</router-link>
+             </div>
+        </div>
       </div>
    </section>
 </template>
