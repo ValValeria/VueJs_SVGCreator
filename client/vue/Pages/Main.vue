@@ -1,5 +1,6 @@
 <template>
    <div>
+   <Header/>
    <section class="blue center banner">
      <div class="section__area">
         <div class="section__sm__wr m-auto text-center">
@@ -17,10 +18,10 @@
                           Создавайте уникальные изображения
                 </div>
                 <div class="section__item">
-                    <div class="section__item-md section__imgwr">
-                       <img alt="...."  class="section__img" src="https://static.wixstatic.com/media/028786_09ff4db64b3b4d0c9b99ff5c892025ca~mv2.jpg/v1/fill/w_436,h_284,al_c,q_80,usm_0.66_1.00_0.01/Artboard%201%20copy%203.webp">            
+                    <div class="section__item-md section__imgwr center">
+                       <img alt="...."  class="section__img section__img-row" src="https://static.wixstatic.com/media/028786_09ff4db64b3b4d0c9b99ff5c892025ca~mv2.jpg/v1/fill/w_436,h_284,al_c,q_80,usm_0.66_1.00_0.01/Artboard%201%20copy%203.webp">            
                     </div>
-                    <div class="section__item-md text-center align-items-center">
+                    <div class="section__item-md d-flex text-center align-items-center justify-content-center flex-column">
                         <div class="section__title-sm">
                            Понятный интерфейс
                         </div>
@@ -55,11 +56,33 @@
          </div>
       </div>
    </section>
-    <section>
-      <div class="section__area section-pd">
+    <section class="advantages">
+      <div class=" section__area section-pd">
          <div class="section__lr__wr ">
-                <div class="headline">
-                          Делитись изображениями
+                <div class="headline text-white">
+                          Почему мы? 
+                </div>
+                <div class="section__item">
+                   <ul class="text-white text-center">
+                      <li>
+                          <div class="item__img">
+                             <img src="/public/img/prosto.svg" alt="" srcset="">
+                          </div>
+                          <p>Просто</p>
+                      </li>
+                      <li>
+                         <div class="item__img">
+                            <img src="/public/img/dostupno.svg" alt="" srcset="">
+                         </div>
+                         <p>Доступно</p>
+                      </li>
+                      <li>
+                         <div class="item__img">
+                            <img src="/public/img/key-feature-01.svg" alt="" class=""/>
+                         </div>
+                         <p>Интересно</p>
+                      </li>
+                   </ul>
                 </div>
          </div>
       </div>
@@ -71,11 +94,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import Footer from '../Components/Footer.vue';
+import Header from '../Components/Header.vue'
 
 export default Vue.extend({
     name:"Main",
     components:{
-       Footer
+       Footer,
+       Header
     }
 })
 </script>

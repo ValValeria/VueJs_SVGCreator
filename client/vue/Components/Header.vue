@@ -1,6 +1,8 @@
 <template>
      <header>
-         Hello
+          <div class="section__lr__wr">
+              <h6 class="brandname"><b style="margin-right:2px;">SVG</b>Create</h6>
+          </div>
      </header>
 </template>
 

@@ -10,6 +10,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
     position: relative;
+    width:100vw;
 }
 
 section{
@@ -39,6 +40,34 @@ section{
     touch-action: manipulation;
     cursor: pointer;
     background-image: none;
+}
+
+.loading{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #28399D;
+    left: 0;
+    z-index: 3000;
+    overflow: hidden;
+    background-image: linear-gradient(110deg,#2839a0 0,#7b5ab6 100%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading__item {
+    min-width:300px;
+}
+
+.loading__item svg path{
+    fill: transparent;
+    stroke-width: 10;
+    stroke: white;
+    stroke-dasharray: 1560;
+    stroke-dashoffset: 0;
+    animation:animate-heart 4s linear forwards
 }
 
 .section__lr__wr{
@@ -157,8 +186,36 @@ section{
 }
 
 .section-pd{
-    padding-top: 100px;
-    padding-bottom:20px;
+    padding-top: 50px;
+    padding-bottom:50px;
+}
+
+
+.advantages ul li{
+    list-style:none;
+    flex: 1 1 33%;
+    min-width: 100px;
+    margin:30px;
+    max-width:200px;
+}
+
+.advantages{
+    background:linear-gradient(145deg,#3161cb 0,#245ad0 100%);
+}
+
+.advantages ul {
+    display:flex;
+    flex-wrap: wrap;
+    margin:0 auto;
+    justify-content: center;
+    width:100%;
+}
+
+.advantages ul li p{
+    font-size: 26px;
+    padding-top: 20px;
+    opacity: .8;
+    line-height: 1.6;
 }
 
 .section__img{
@@ -193,6 +250,30 @@ section{
     margin: 0 auto;
 }
 
+.brandname{
+    padding-left: 30px;
+    font-size: 30px;
+    font-weight: 400;
+}
+header{
+    position: fixed;
+    width: 100%;
+    box-shadow: 12px 9px 50px 0 rgba(0,0,0,.05);
+    z-index: 999;
+    transition: background-color .3s ease,top .3s ease;
+    top: 0;
+    background-color: #fff;
+    padding:1rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+ }  
+
+
 .headline{
     margin-bottom: 40px;
     font-size: 36px;
@@ -216,4 +297,31 @@ section{
 
 .blue{
     background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='762' viewBox='0 0 1920 762' fill='none'%3E%3Cg clip-path='url(%23ellipses-background)' class='ellipses'%3E%3Cg opacity='0.7'%3E%3Cg opacity='0.06' filter='url(%23ellipse-fourth)' class='fourth'%3E%3Cellipse rx='357' ry='357' transform='matrix(1 8.74228e-08 8.74228e-08 -1 505 15)' fill='white' /%3E%3C/g%3E%3Cg opacity='0.12' filter='url(%23ellipse-third)' class='third'%3E%3Cellipse rx='273' ry='273' transform='matrix(1 8.74228e-08 8.74228e-08 -1 505 14.9999)' fill='white' /%3E%3C/g%3E%3Cg opacity='0.16' filter='url(%23ellipse-second)' class='second'%3E%3Cellipse rx='189' ry='189' transform='matrix(1 8.74228e-08 8.74228e-08 -1 505 15)' fill='white' /%3E%3C/g%3E%3Cg opacity='0.22' filter='url(%23ellipse-first)' class='first'%3E%3Ccircle r='105' transform='matrix(1 8.74228e-08 8.74228e-08 -1 505 15)' fill='white' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='ellipse-fourth' x='98' y='-392' width='814' height='814' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' /%3E%3CfeOffset /%3E%3CfeGaussianBlur stdDeviation='25' /%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0' /%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape' /%3E%3C/filter%3E%3Cfilter id='ellipse-third' x='182' y='-308' width='646' height='646' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' /%3E%3CfeOffset /%3E%3CfeGaussianBlur stdDeviation='25' /%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0' /%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape' /%3E%3C/filter%3E%3Cfilter id='ellipse-second' x='266' y='-224' width='478' height='478' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' /%3E%3CfeOffset /%3E%3CfeGaussianBlur stdDeviation='25' /%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0' /%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape' /%3E%3C/filter%3E%3Cfilter id='ellipse-first' x='350' y='-140' width='310' height='310' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' /%3E%3CfeOffset /%3E%3CfeGaussianBlur stdDeviation='25' /%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0' /%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape' /%3E%3C/filter%3E%3CclipPath id='ellipse-background'%3E%3Crect width='1920' height='762' fill='white' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") center top no-repeat,linear-gradient(145deg,#3161cb 0,#245ad0 100%);
+}
+
+
+@media(max-width:850px){
+     .section__item{
+         flex-wrap:wrap-reverse;
+     }
+     .section__img-row{
+         margin-top: 2rem;
+     }
+     .section__subtitle-sm{
+         max-width:500px;
+     }
+}
+
+@keyframes animate-heart{
+     0%{
+       stroke-dashoffset: 0;
+     }
+     40%{
+        stroke-dashoffset: 1560;
+     }
+     100%{
+        stroke-dashoffset: 3120;
+      }
+
+
 }
