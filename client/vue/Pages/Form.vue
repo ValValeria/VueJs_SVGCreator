@@ -161,7 +161,6 @@ export default Vue.extend({
               document.querySelector('#ok').onclick = ()=>{
                 this.context.font="30px Arial";
                 this.draw();
-                this.context.fillStyle=this.activeColor;
                 this.context.fillText(this.text,this.coordinates.x,this.coordinates.y);
                 this.isText = false;
               }}
