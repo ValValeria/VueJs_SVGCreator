@@ -12,6 +12,11 @@ export default Vue.extend({
     name:"Main",
     components:{
       Header
+    },
+    mounted(){
+      this.$nextTick(()=>{
+        // window.oncontextmenu = ()=>false;
+      })
     }
 })
 </script>

@@ -9,6 +9,7 @@
 body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 
 section{
@@ -66,6 +67,12 @@ section{
 
 .bc__lgray{
     background-color: #f7f7fd;
+}
+
+.section__arrow{
+    top:3rem;
+    left:40px;
+    position: fixed;
 }
 
 .banner{
@@ -158,9 +165,13 @@ section{
     width: 436px; height: 284px; object-fit: cover;
 }
 
+.object-fit-contain{
+    object-fit: contain !important;
+}
+
 .section__item{
     display: flex;
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 
 .section__title-sm{
@@ -178,6 +189,8 @@ section{
     font-size: 18px;
     line-height: 1.6;
     color: #666;
+    max-width: 330px;
+    margin: 0 auto;
 }
 
 .headline{

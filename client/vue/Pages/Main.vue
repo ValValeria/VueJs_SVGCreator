@@ -20,7 +20,7 @@
                     <div class="section__item-md section__imgwr">
                        <img alt="...."  class="section__img" src="https://static.wixstatic.com/media/028786_09ff4db64b3b4d0c9b99ff5c892025ca~mv2.jpg/v1/fill/w_436,h_284,al_c,q_80,usm_0.66_1.00_0.01/Artboard%201%20copy%203.webp">            
                     </div>
-                    <div class="section__item-md text-center">
+                    <div class="section__item-md text-center align-items-center">
                         <div class="section__title-sm">
                            Понятный интерфейс
                         </div>
@@ -35,15 +35,15 @@
 
      <section>
       <div class="section__area section-pd">
-         <div class="section__sm__wr ">
+         <div class="section__lr__wr ">
                 <div class="headline">
                           Делитись изображениями
                 </div>
-                <div class="section__item flex-reverse">
-                    <div class="section__item-md section__imgwr">
-                       <img alt="...."  class="section__img" src="https://static.wixstatic.com/media/028786_a9d864e863f145289a7b936bd2ff9f2a~mv2.jpg/v1/fill/w_339,h_303,al_c,q_80,usm_0.66_1.00_0.01/Artboard%201%20copy%205.webp">            
+                <div class="section__item flex-column-reverse align-items-center justify-content-center">
+                    <div class="section__item-md section__imgwr pt-4 w-100">
+                       <img alt="...."  class="section__img w-100 object-fit-contain" src="https://static.wixstatic.com/media/028786_fe82c823e17647ccba1dad8aff694ed4~mv2.jpg/v1/fill/w_404,h_251,al_c,q_80,usm_0.66_1.00_0.01/Artboard%201%20copy%207.webp">            
                     </div>
-                    <div class="section__item-md text-center">
+                    <div class="section__item-md text-center align-items-center w-100">
                         <div class="section__title-sm">
                            Легко отправлять изображения
                         </div>
@@ -55,6 +55,15 @@
          </div>
       </div>
    </section>
+    <section>
+      <div class="section__area section-pd">
+         <div class="section__lr__wr ">
+                <div class="headline">
+                          Делитись изображениями
+                </div>
+         </div>
+      </div>
+    </section>          
     <Footer/>
    </div>
 </template>
