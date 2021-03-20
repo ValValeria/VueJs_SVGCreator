@@ -8,4 +8,5 @@ The app which helps you to develop svg pictures. In addition, you are able to do
 * GET /form - form page. There you can draw rect, circle and more. Having finished the painting, you have an opportunity to download it in svg format
 
 ## How to run the app
+**npm install**
 **npm run restart**
